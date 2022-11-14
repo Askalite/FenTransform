@@ -1,13 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/styles.css" rel="stylesheet">
+  <head><meta charset="UTF-8">
   </head>
   <body>
-
-    <h1>My Website</h1>
-
-    <p>This is my first website</p>
-
+    <div>
+      <form name="publish">
+        <input type="text" name="message" placeholder="fen" id="input" />
+      </form>
+      <button name="send" id = "click" >Отправить</button>
+    </div>
+    <div id="result" ></div>
   </body>
-</html>		
+<script>
+
+function getres(e) {
+    var m = document.getElementById("input").value;
+    var result ="";
+    var l=m.length;
+    result += ".";
+    for (var i=0; i < l; i++)
+    {
+        console.log(i);
+        if (m[i] == "1")
+        {
+            result += " .";
+        }
+        else if (m[i] == "2")
+        {
+            result += " . .";
+        }
+        else if (m[i] == "3")
+        {
+            result += " . . .";
+        }
+        else if (m[i] == "4")
+        {
+            result += " . . . .";
+        }
+        else if (m[i] == "5")
+        {
+            result += " . . . . .";
+        }
+        else if (m[i] == "6")
+        {
+            result += " . . . . . .";
+        }
+        else if (m[i] == "7")
+        {
+            result += " . . . . . . .";
+        }
+        else if (m[i] == "8")
+        {
+            result += " . . . . . . . .";
+        }
+        else if (m[i] == "P")
+        {
+            result += " ♙.";
+        }
+        else if (m[i] == "p")
+        {
+            result += " ♟.";
+        }
+        else if (m[i] == "R")
+        {
+            result += " ♖.";
+        }
+        else if (m[i] == "B")
+        {
+            result += " ♗.";
+        }
+        else if (m[i] == "N")
+        {
+            result += " ♘.";
+        }
+        else if (m[i] == "Q")
+        {
+            result += " ♕.";
+        }
+        else if (m[i] == "r")
+        {
+            result += " ♜.";
+        }
+        else if (m[i] == "b")
+        {
+            result += " ♝.";
+        }
+        else if (m[i] == "n")
+        {
+            result += " ♞.";
+        }
+        else if (m[i] == "q")
+        {
+            result += " ♛.";
+        }
+        else if (m[i] == "k")
+        {
+            result += " ♚.";
+        }
+        else if (m[i] == "K")
+        {
+            result += " ♔.";
+        }
+        else if (m[i] == "/")
+        {
+            result += "\n<br>.";
+        }
+        else if (m[i] == " ")
+        {
+            break;
+        };
+    }
+    document.getElementById("result").innerHTML = result;
+    return false;
+};
+var sendButton = document.getElementById("click");
+sendButton.addEventListener("click", getres);
+</script>
+</html>
